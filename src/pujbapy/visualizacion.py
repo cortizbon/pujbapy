@@ -10,7 +10,7 @@ def histograma(datos,
   col = datos[variable]
   fig, ax = plt.subplots(1, 1)
 
-  ax.hist(col, bins=bins, color=color)
+  ax.hist(col, bins=bins)
   if guardar:
     fig.savefig("histograma.jpeg")
 

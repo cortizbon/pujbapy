@@ -6,7 +6,6 @@ plt.style.use("../../viz/pujbapy_style.mplstyle")
 def histograma(datos, 
                variable, 
                bins=30, 
-               color='blue', 
                guardar=False):
   col = datos[variable]
   fig, ax = plt.subplots(1, 1)
@@ -20,8 +19,7 @@ def histograma(datos,
 
 def grafico_barras(datos, 
                    variable_x, 
-                   variable_y, 
-                   colores, 
+                   variable_y,
                    guardar=False):
   fig, ax = plt.subplots(1, 1)
 
@@ -61,9 +59,7 @@ def grafico_dispersion(datos,
 def grafico_caja(datos, 
                  variable_x, 
                  variable_y, 
-                 hue=None, 
-                 color="blue", 
-                 linecolor="blue",
+                 hue=None,
                  guardar=False):
   fig, ax = plt.subplots(1, 1)
 
@@ -71,8 +67,6 @@ def grafico_caja(datos,
               x=variable_x,
               y=variable_y,
               hue=hue,
-              color=color,
-              linecolor=linecolor,
               ax=ax)
   if guardar:
     fig.savefig("box.jpeg")

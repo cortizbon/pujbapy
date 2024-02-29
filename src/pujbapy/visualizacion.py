@@ -1,7 +1,7 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-plt.style.use("../../viz/pujbapy_style.mplstyle")
+plt.style.use("https://github.com/cortizbon/pujbapy/blob/main/viz/pujbapy_style.mplstyle")
 
 def histograma(datos, 
                variable, 

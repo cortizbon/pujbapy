@@ -24,7 +24,7 @@ def grafico_barras(datos,
   sns.barplot(datos, 
               x=variable_x, 
               y=variable_y, 
-              estimator='sum', 
+              estimator='count', 
               errorbar=None,
               ax=ax)
   

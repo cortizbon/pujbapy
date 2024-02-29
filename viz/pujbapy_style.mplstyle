@@ -1,0 +1,13 @@
+axes.spines.left:   True  
+axes.spines.bottom: True
+axes.spines.top:    False
+axes.spines.right:  False
+axes.prop_cycle: cycler('color', ['D64045', 'E9FFF9', '9ED8DB', '467599', '1D3354'])
+yaxis.labellocation: top
+xaxis.labellocation: right
+
+xtick.bottom: False
+ytick.left: False
+
+hist.bins: 25
+

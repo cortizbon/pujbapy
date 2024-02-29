@@ -1,6 +1,8 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+plt.style.use("../../viz/pujbapy_style.mplstyle")
+
 def histograma(datos, 
                variable, 
                bins=30, 
@@ -12,7 +14,9 @@ def histograma(datos,
   ax.hist(col, bins=bins, color=color)
   if guardar:
     fig.savefig("histograma.jpeg")
-  plt.show()
+
+  return fig
+
 
 def grafico_barras(datos, 
                    variable_x, 
@@ -30,7 +34,8 @@ def grafico_barras(datos,
   
   if guardar:
     fig.savefig("bar.jpeg")
-  plt.show()
+
+  return fig
 
 def grafico_dispersion(datos, 
                        variable_x, 
@@ -50,7 +55,8 @@ def grafico_dispersion(datos,
   
   if guardar:
     fig.savefig("scatter.jpeg")
-  plt.show()
+
+  return fig
 
 def grafico_caja(datos, 
                  variable_x, 
@@ -70,4 +76,5 @@ def grafico_caja(datos,
               ax=ax)
   if guardar:
     fig.savefig("box.jpeg")
-  plt.show()
+
+  return fig

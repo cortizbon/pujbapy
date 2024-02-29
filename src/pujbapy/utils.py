@@ -1,7 +1,6 @@
 from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 
-
 DIC_ALTERNATIVAS = {'diferente de': 'two-sided',
                     'menor que': 'less',
                     'mayor que': 'greater'}

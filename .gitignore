@@ -1,2 +1,4 @@
 /venv
 /dist
+src/pujbapy/experiments.ipynb
+src/pujbapy/__pycache__

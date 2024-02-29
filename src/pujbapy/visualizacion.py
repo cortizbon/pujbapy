@@ -1,16 +1,17 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-plt.style.use("https://github.com/cortizbon/pujbapy/blob/main/viz/pujbapy_style.mplstyle")
+plt.style.use("https://raw.githubusercontent.com/cortizbon/pujbapy/main/viz/pujbapy_style.mplstyle")
 
 def histograma(datos, 
                variable, 
                bins=30, 
-               guardar=False):
+               guardar=False,
+               alpha=1):
   col = datos[variable]
   fig, ax = plt.subplots(1, 1)
 
-  ax.hist(col, bins=bins)
+  ax.hist(col, bins=bins, alpha=alpha)
   if guardar:
     fig.savefig("histograma.jpeg")
 

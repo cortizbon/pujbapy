@@ -2,6 +2,7 @@ LICENSE
 README.md
 pyproject.toml
 src/pujbapy/__init__.py
+src/pujbapy/intervalos.py
 src/pujbapy/modelos.py
 src/pujbapy/pruebas.py
 src/pujbapy/utils.py

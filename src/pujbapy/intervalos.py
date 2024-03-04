@@ -31,7 +31,7 @@ def intervalo_varianzas(datos, columna1, columna2, alpha=0.05):
     dof1 = len(datos[columna1]) - 1 
     dof2 = len(datos[columna2]) - 1
 
-    F = st.f(dfn=dof1, df=dof2)
+    F = st.f(dfn=dof1, dfd=dof2)
 
     fstat1 = F.ppf(alpha / 2)
     fstat2 = F.ppf(1 - (alpha / 2))

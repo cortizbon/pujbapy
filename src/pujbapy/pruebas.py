@@ -14,11 +14,11 @@ def media_contra_valor(columna, valor, nivel_significancia, hipotesis_alternativ
     print(f"No hay evidencia suficiente para rechazar la hipótesis nula. La media no es {hipotesis_alternativa} {valor}.")
     
 
-def comparar_medias(columna1, columna2, nivel_significancia, hipotesis_alternativa='diferente de'):
+def comparar_medias(columna1, columna2, nivel_significancia, hipotesis_alternativa='diferente de', equal_var=False):
 
   hipot = DIC_ALTERNATIVAS[hipotesis_alternativa]
 
-  stat, pvalor = st.ttest_1samp(columna1, columna2, alternative=hipot)
+  stat, pvalor = st.ttest_ind(columna1, columna2, alternative=hipot, equal_var=equal_var)
 
   if pvalor < nivel_significancia:
     print(f"Rechazamos la hipótesis nula. La media 1 es estadísticamente {hipotesis_alternativa} de la media 2.")

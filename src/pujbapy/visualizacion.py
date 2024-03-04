@@ -7,10 +7,12 @@ def histograma(datos,
                variable, 
                bins=30, 
                guardar=False,
-               alpha=1):
+               alpha=1,
+               titulo=None):
   col = datos[variable]
   fig, ax = plt.subplots(1, 1)
-
+  if type(titulo) == str:
+    ax.set_title(titulo)
   ax.hist(col, bins=bins, alpha=alpha)
   if guardar:
     fig.savefig("histograma.jpeg")
@@ -21,8 +23,11 @@ def histograma(datos,
 def grafico_barras(datos, 
                    variable_x, 
                    variable_y,
-                   guardar=False):
+                   guardar=False,
+                   titulo=None):
   fig, ax = plt.subplots(1, 1)
+  if type(titulo) == str:
+    ax.set_title(titulo)
 
   sns.barplot(datos, 
               x=variable_x, 
@@ -42,7 +47,8 @@ def grafico_dispersion(datos,
                        hue=None, 
                        size=None, 
                        style=None, 
-                       guardar=False):
+                       guardar=False,
+                       titulo=None):
   fig, ax = plt.subplots(1, 1)
   sns.scatterplot(datos, 
                   x=variable_x, 
@@ -51,7 +57,9 @@ def grafico_dispersion(datos,
                   size=size,
                   style=style,
                   ax=ax)
-  
+  if type(titulo) == str:
+    ax.set_title(titulo)
+
   if guardar:
     fig.savefig("scatter.jpeg")
 
@@ -61,9 +69,12 @@ def grafico_caja(datos,
                  variable_x, 
                  variable_y, 
                  hue=None,
-                 guardar=False):
+                 guardar=False,
+                 titulo=None):
   fig, ax = plt.subplots(1, 1)
 
+  if type(titulo) == str:
+    ax.set_title(titulo)
   sns.boxplot(datos,
               x=variable_x,
               y=variable_y,

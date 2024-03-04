@@ -1,5 +1,6 @@
 from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
+import matplotlib.pyplot as plt
 
 DIC_ALTERNATIVAS = {'diferente de': 'two-sided',
                     'menor que': 'less',
@@ -12,3 +13,9 @@ def crear_paleta_colores(*colors):
   gradient = np.vstack((gradient, gradient))
 
   return cmap
+
+def cambiar_paleta_estandar_colores(*colors):
+
+  plt.rcParams['axes.prop_cycle'] = plt.cycler(color=colors)
+
+

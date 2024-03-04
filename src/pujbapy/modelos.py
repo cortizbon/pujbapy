@@ -1,19 +1,26 @@
 import statsmodels.api as sm
 from statsmodels.stats.diagnostic import het_breuschpagan
 
-def regresion_lineal(datos, variable_y, variables_x, test_het=False):
+def regresion_lineal(datos, variable_y, variables_x, test_het=False, het=False):
 
   y = datos[variable_y]
   x = sm.add_constant(datos[variables_x])
   model = sm.OLS(y, x)
   reg = model.fit()
-  print(reg.summary())
+  
 
   if test_het:
     lm, plm, f, pf = het_breuschpagan(reg.resid, x)
     print(f"p valor: {pf}")
     if pf < 0.05:
+      print('***' * 10)
       print("Existe evidencia de heterocedasticidad.")
+      print('***' * 10)
+      het = True
+  if het:
+    print(reg.get_robustcov_results().summary())
+  else:
+    print(reg.summary()) 
 
 def regresion_logistica(datos, variable_y, variables_x, efectos_marginales=False):
   y = datos[variable_y]
